@@ -1,0 +1,30 @@
+<%= render "form" %>
+</hr>
+<h4>Top Performing 100 URLs:-</h4>
+<% if notice %>
+  <h5>error: <%= notice.join(", ") %> </h5>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Full URLs</th>
+      <th>Shortened URLs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @web_addresses.each do |web_address| %>
+      <tr>
+        <td>
+          <%= web_address.title %>
+        </td>
+        <td>
+          <%= link_to web_address.full_url, web_address.full_url %>
+        </td>
+        <td>
+          <%= link_to shortened_url(web_address.short_url), shortened_url(web_address.short_url) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

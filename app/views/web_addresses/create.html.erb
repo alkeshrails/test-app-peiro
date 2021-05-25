@@ -1,0 +1,6 @@
+<h1>Good to go with new URL</h1>
+
+<p>
+  Full URL:- <%= link_to @web_address.full_url, @web_address.full_url %>
+  Shortened URL:- <%= link_to shortened_url(@web_address.short_url), shortened_url(@web_address.short_url) %>
+</p>
